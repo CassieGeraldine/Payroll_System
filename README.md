@@ -29,6 +29,11 @@ The managements system should have a greeting message and a menu that asks the u
 
 This should show you all the employees that are currently registered on the system
 
+#### Example
+
+1) Josh Wolf 8978
+2) Tom Wolf 8998
+
 ### Adding an employee
 
 We must be able to add the employee name, surname and employee number
@@ -52,3 +57,15 @@ This should give us the option to update the employees name, surname, number or 
 ### NOTICE
 
 At the end of each operation, Update, Add or delete, I want you to show the main menu again!
+
+```python
+[0, 1, 2]
+[t, w, r]
+
+for letter in letters:
+  t = 0
+  w
+  r
+for i in range(len(letters))
+  print(f"{i} {letters[i]}") # 0 t, 1 w, 2 r
+```
