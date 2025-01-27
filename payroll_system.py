@@ -59,7 +59,7 @@ def delete_employee():
     for index,surname in enumerate(list_of_surnames):
         print(index + 1,surname)
 
-    #remember the input function only takes in strings,
+    #remember the input function only takes in strings,sss
     #so if i want the user to choose a number I have to convert
     #whatever they
     delete_surname = input("Delete surname:")
