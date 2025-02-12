@@ -35,54 +35,72 @@ def add_new_employee():
 
 def delete_employee():
 
-    print("=========================================")
-    print("List of names:")
-    #Enumerate shows the index number and the name.
-    for i, name in enumerate(list_of_emp_names):
-        print(f"{i + 1}:{name}")
+    print("Select the employee that you would like to delete:")
+    view()
 
-    delete_name = input("Delete name?")
-    #Coverted the input into an interger because the input function only takes strings.
-    new_del_name = int(delete_name)
-    del list_of_emp_names[new_del_name-1] #-1 so that the index number can start from 0, cause
-    #we incremented when we were printing the list, so that the user does not see the first
-    # name printed on option 0, however when we now want to delete the first index we have to
-    #decrement the index by 1 so that it matches.
+    try:
+        #confirm=True
+        del_employee = input("Select: ")
 
-    print("Remaining employee names")
-    for name in list_of_emp_names:
-        print(name)
+        confirm_delete=input("1.Confirm Delete")
+        if del_employee == confirm_delete:
+            del list_of_emp_names[int(del_employee)-1]
+        else:
+            print("2.Cancel")
+            menu()
+    except ValueError:
+        print("Invalid input, please enter a number.")
 
-    """_deleting by surname_
-    """
-    print("List of employee surnames")
-    #prints the lists of surnames and their index numbers.
-    for index,surname in enumerate(list_of_surnames):
-        print(f"{index + 1}:{surname}")
+    # print("=========================================")
+    # print("List of names:")
+    # #Enumerate shows the index number and the name.
+    # for i, name in enumerate(list_of_emp_names):
+    #     print(f"{i + 1}:{name}")
 
-    delete_surname = input("Delete surname:")
-    new_del_surname = int(delete_surname)
-    del list_of_surnames[new_del_surname-1]
+    # delete_name = input("Delete name?")
+    # #Coverted the input into an interger because the input function only takes strings.
 
-    print("Remaining employee surnames")
-    for surname in list_of_surnames:
-        print(surname)
 
-    """Deleting by employee numbers.
-    """
-    #Displaying employee number and incremented the index number so that the user can see it starting from 1 instead of 0.
-    print("Employee Numbers:\n")
-    for num_index,number in enumerate(list_of_employee_numbers):
-        print(f"{num_index + 1}:{number}")
+    # new_del_name = int(delete_name)
+    # del list_of_emp_names[new_del_name-1] #-1 so that the index number can start from 0, cause
+    # #we incremented when we were printing the list, so that the user does not see the first
+    # # name printed on option 0, however when we now want to delete the first index we have to
+    # #decrement the index by 1 so that it matches.
 
-    delete_emp_number=input("Select employee number to delete.")
-    del list_of_employee_numbers[int(delete_emp_number)-1]
+    # print("Remaining employee names")
+    # for name in list_of_emp_names:
+    #     print(name)
 
-    print("Remaining employee numbers:")
-    for num in list_of_employee_numbers:
-        print(num)
+    # """_deleting by surname_
+    # """
+    # print("List of employee surnames")
+    # #prints the lists of surnames and their index numbers.
+    # for index,surname in enumerate(list_of_surnames):
+    #     print(f"{index + 1}:{surname}")
 
-    print("=========================================")
+    # delete_surname = input("Delete surname:")
+    # new_del_surname = int(delete_surname)
+    # del list_of_surnames[new_del_surname-1]
+
+    # print("Remaining employee surnames")
+    # for surname in list_of_surnames:
+    #     print(surname)
+
+    # """Deleting by employee numbers.
+    # """
+    # #Displaying employee number and incremented the index number so that the user can see it starting from 1 instead of 0.
+    # print("Employee Numbers:\n")
+    # for num_index,number in enumerate(list_of_employee_numbers):
+    #     print(f"{num_index + 1}:{number}")
+
+    # delete_emp_number=input("Select employee number to delete.")
+    # del list_of_employee_numbers[int(delete_emp_number)-1]
+
+    # print("Remaining employee numbers:")
+    # for num in list_of_employee_numbers:
+    #     print(num)
+
+    # print("=========================================")
 
 
 def exit_program():
@@ -117,7 +135,8 @@ def menu():
             delete_employee()
         elif option == "4":
             #Calling the update function
-            add_new_employee()
+           # update_employee()
+           pass
         elif option == "5\n":
             #Calling the function to quit the program.
             exit_program()
